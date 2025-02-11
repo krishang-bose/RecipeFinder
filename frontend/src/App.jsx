@@ -20,6 +20,7 @@ function App() {
     </div>
   )}
   return (
+    //shrey add navbar here
     <div>
       <Routes>
         <Route path="/" element={authUser?<HomePage />: <Navigate to= "/signup"/>} />
