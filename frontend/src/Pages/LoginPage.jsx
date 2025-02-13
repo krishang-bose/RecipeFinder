@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
 import { useAuthStore } from '../store/useAuthStore';
 import { toast } from 'react-hot-toast';
@@ -118,7 +118,7 @@ const LoginForm = () => {
 
         <div className="text-center mt-6">
           <p className="text-green-800">
-            Don't have an account?{' '}
+            Don&apos;t have an account?{' '}
             <a 
               href="/signup" 
               className="text-green-600 hover:text-green-500 
