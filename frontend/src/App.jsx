@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage';
 import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
 import { useAuthStore } from './store/useAuthStore';
+import NavBar from './Components/NavBar';
 import { useEffect } from 'react';
 import { Loader } from 'lucide-react';
 import { Toaster } from 'react-hot-toast';
@@ -22,6 +23,7 @@ function App() {
   return (
     //shrey add navbar here
     <div>
+      <NavBar />
       <Routes>
         <Route path="/" element={authUser?<HomePage />: <Navigate to= "/signup"/>} />
         <Route path="/signup" element={!authUser? <SignupPage />: <Navigate to="/"/>} />
