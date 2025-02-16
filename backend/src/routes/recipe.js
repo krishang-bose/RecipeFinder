@@ -1,1 +1,5 @@
-// for api req (handeling the recipe things)
+import express from "express";
+
+const router = express.Router();
+
+router.post("/addRecipe", addRecipe);
