@@ -8,7 +8,10 @@ import NavBar from './Components/NavBar';
 import { useEffect } from 'react';
 import { Loader } from 'lucide-react';
 import { Toaster } from 'react-hot-toast';
-import PropTypes from 'prop-types'; // ✅ Import PropTypes
+import PropTypes from 'prop-types';
+import AboutUs from './pages/AboutUs';
+
+
 
 function App() {
   const { authUser, checkAuth, isCheckingAuth } = useAuthStore();
@@ -41,6 +44,7 @@ const MainContent = ({ authUser }) => {
         <Route path="/" element={authUser ? <HomePage /> : <Navigate to="/signup" />} />
         <Route path="/signup" element={!authUser ? <SignupPage /> : <Navigate to="/" />} />
         <Route path="/login" element={!authUser ? <LoginPage /> : <Navigate to="/" />} />
+        <Route path="/AboutUs" element={authUser ? <AboutUs /> : <Navigate to="/signup" />} />
       </Routes>
       <Toaster />
     </div>
@@ -49,7 +53,7 @@ const MainContent = ({ authUser }) => {
 
 // ✅ Define PropTypes
 MainContent.propTypes = {
-  authUser: PropTypes.any, // You can change 'any' to a more specific type if needed
+  authUser: PropTypes.any, 
 };
 
 export default App;
