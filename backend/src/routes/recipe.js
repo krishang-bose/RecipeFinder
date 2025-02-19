@@ -1,5 +1,9 @@
-import express from "express";
+import { Router } from "express";
+const router = Router(); // ✅ Correct initialization
 
-const router = express.Router();
+import recipeController from "../controller/recipe.js";
 
-router.post("/addRecipe", addRecipe);
+// Route: /api/recipes/search?query=chicken
+router.get("/search", recipeController.searchRecipes);
+
+export default router;
