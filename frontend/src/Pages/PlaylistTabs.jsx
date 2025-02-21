@@ -12,7 +12,7 @@ const playlists = {
     hover: "hover:bg-blue-100",
   },
   "Acoustic Chill": {
-    url: "https://open.spotify.com/embed/playlist/37i9dQZF1DX2NCjY9rFTg0",
+    url: "https://open.spotify.com/embed/playlist/3Bud292FcSJw20PD7EZn7E?utm_source=generator",
     accent: "bg-amber-600",
     hover: "hover:bg-amber-100",
   },
