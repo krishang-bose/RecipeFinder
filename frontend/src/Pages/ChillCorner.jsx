@@ -1,13 +1,9 @@
 import React from "react";
 import PlaylistTabs from "./PlaylistTabs";
-import NavBar from "../components/NavBar"; 
-import Footer from "../components/Footer"; 
 
 export default function ChillCorner() {
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Navbar Section */}
-      <NavBar />
 
       {/* Main Content Section */}
       <div className="flex-grow bg-lime-200/35 flex flex-col items-center justify-center text-center p-10">
@@ -26,9 +22,6 @@ export default function ChillCorner() {
           <PlaylistTabs />
         </div>
       </div>
-
-      {/* Footer Section */}
-      <Footer />
     </div>
   );
 }

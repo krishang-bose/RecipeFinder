@@ -6,10 +6,12 @@ import LoginPage from './pages/LoginPage';
 import { useAuthStore } from './store/useAuthStore';
 import NavBar from './Components/NavBar';
 import { useEffect } from 'react';
-import { Loader } from 'lucide-react';
+import { Loader, Timer } from 'lucide-react';
 import { Toaster } from 'react-hot-toast';
 import PropTypes from 'prop-types';
 import AboutUs from './pages/AboutUs';
+import Footer from './Components/Footer';
+import ChillCorner from './Pages/ChillCorner';
 
 
 
@@ -45,7 +47,9 @@ const MainContent = ({ authUser }) => {
         <Route path="/signup" element={!authUser ? <SignupPage /> : <Navigate to="/" />} />
         <Route path="/login" element={!authUser ? <LoginPage /> : <Navigate to="/" />} />
         <Route path="/AboutUs" element={authUser ? <AboutUs /> : <Navigate to="/signup" />} />
+        <Route path="/ChillCorner"element={authUser ? <ChillCorner /> : <Navigate to="/signup" />}/>
       </Routes>
+      <Footer/>
       <Toaster />
     </div>
   );
