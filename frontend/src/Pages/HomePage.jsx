@@ -1,9 +1,10 @@
-import { useState } from "react";
-import { FaSearch } from "react-icons/fa"; 
+import { useState, useEffect } from "react";
+import { FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [gradientProgress, setGradientProgress] = useState(0);
   const navigate = useNavigate();
   const salads = [
     {
@@ -36,24 +37,49 @@ const Home = () => {
     }
   ];
 
-  return (
-    <div>
+  // Very slow color transition effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setGradientProgress(prev => {
+        // Increment by 0.1% every 5 seconds - extremely slow
+        const newValue = prev + 0.1;
+        return newValue > 100 ? 0 : newValue;
+      });
+    }, 5000); // Update every 5 seconds
+    
+    return () => clearInterval(interval);
+  }, []);
 
-      {/* Intro Page */}
-        <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white py-16">
-        <div className="max-w-3xl mx-auto px-6">
+  // Calculate the gradient color based on progress
+  const getGradientStyle = () => {
+    // Start with yellow-green, slowly transition to lime-green
+    return {
+      background: `linear-gradient(135deg, 
+        rgba(249, 250, 230, ${1 - gradientProgress/100}) 0%, 
+        rgba(227, 241, 212, ${1 - gradientProgress/150}) 35%, 
+        rgba(237, 248, 217, ${1 - gradientProgress/200}) 70%, 
+        rgba(242, 249, 192, ${1 - gradientProgress/100}) 100%)`,
+      transition: 'background 4s ease-in-out'
+    };
+  };
+
+  return (
+    <div className="min-h-screen relative" style={getGradientStyle()}>
+      {/* Intro Page - Moved down slightly */}
+      <div className="pt-24 pb-24">
+        <div className="max-w-4xl mx-auto px-6">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#963E1F]">Welcome to ChefMate</h1>
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="flex-1">
-              <p className="text-lg md:text-xl leading-relaxed text-gray-800 mb-3">
+              <p className="text-xl leading-relaxed text-gray-800 mb-4">
                 Your ultimate kitchen companion! ChefMate simplifies cooking with smart recipe searches, AI-powered assistance, meal planning, and a foodie community.
               </p>
-              <p className="text-lg md:text-xl leading-relaxed text-gray-800">
+              <p className="text-xl leading-relaxed text-gray-800">
                 Discover trending recipes, scale ingredients, find nearby grocery stores, and set the perfect cooking vibe. Make every meal special! 🍽️✨
               </p>
             </div>
             <div className="flex-shrink-0">
-              <div className="w-48 h-48 md:w-56 md:h-56 relative">
+              <div className="w-36 h-36 md:w-48 md:h-48 relative">
                 <img 
                   src="/api/placeholder/400/400" 
                   alt="chicken butter masala" 
@@ -64,18 +90,16 @@ const Home = () => {
           </div>
         </div>
       </div>
+
       {/* Hero Section */}
-      <section className="container mx-auto flex flex-col md:flex-row items-center justify-between py-16 px-6 md:px-20">
-        {/* Left Content */}
+      <section className="container mx-auto flex flex-col md:flex-row items-center justify-between py-24 px-6 md:px-16">
         <div className="md:w-1/2 text-left space-y-6">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
             Your Kitchen, <br /> Your Rules... <br />
             <span className="text-emerald-600">We Just Make It Easier!</span>
           </h1>
-
-          {/* Search Bar */}
-          <div className="bg-green-100 px-6 py-4 rounded-lg flex items-center gap-3 shadow-md w-full md:w-auto">
-            <p className="text-gray-700 text-lg font-medium">
+          <div className="bg-white/50 backdrop-blur-sm px-6 py-4 rounded-xl flex flex-col md:flex-row items-start md:items-center gap-4 shadow-md w-full">
+            <p className="text-gray-700 text-xl font-medium">
               Hey Stuti, what are you craving today?
             </p>
             <div className="flex items-center bg-white rounded-full px-4 py-2 shadow-sm w-full md:w-96">
@@ -84,7 +108,7 @@ const Home = () => {
                 placeholder="Search for Recipes"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full px-3 py-2 border-none outline-none bg-transparent text-gray-700"
+                className="w-full px-3 py-2 border-none outline-none bg-transparent text-gray-700 text-lg"
               />
               <button className="text-emerald-600">
                 <FaSearch size={20} />
@@ -92,89 +116,67 @@ const Home = () => {
             </div>
           </div>
         </div>
-
-        {/* Right Image Section */}
-        <div className="md:w-1/2 flex justify-center mt-10 md:mt-0">
-          <div className="w-80 h-80 md:w-96 md:h-96 bg-emerald-100 rounded-full flex items-center justify-center shadow-lg">
+        <div className="md:w-1/2 flex justify-center mt-12 md:mt-0">
+          <div className="w-64 h-64 md:w-80 md:h-80 bg-white/50 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg">
             <img
               src="../icons/hera.png"
               alt="Cooking Illustration"
-              className="max-w-full h-auto object-contain"
+              className="max-w-full h-auto object-contain p-6"
             />
           </div>
         </div>
       </section>
 
-      {/* Trending */}
-
-        <div className="min-h-screen bg-gradient-to-b from-yellow-50 to-lime-100 relative overflow-hidden">
-        <div className="container mx-auto px-4 py-16">
-          {/* Heading */}
-          <h1 className="text-6xl font-bold text-center mb-20 text-gray-900">Let's See What's Trending...</h1>
-          
-          {/* Salad Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {salads.map((salad) => (
-              <div key={salad.id} className="bg-white rounded-3xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
-                {/* Image Container */}
-                <div className="relative">
-                  <img 
-                    src={salad.image} 
-                    alt={salad.name}
-                    className="w-full h-64 object-cover"
-                    onError={(e) => {
-                      e.target.src = "/api/placeholder/400/400";
-                      e.target.alt = "Salad image placeholder";
-                    }}
-                  />
-                  {/* Price Tag */}
-                  <div className="absolute top-4 left-4">
-                    <div className="bg-black text-white font-bold rounded-full w-12 h-12 flex items-center justify-center">
-                      ${salad.price}
-                    </div>
+      {/* Trending Section */}
+      <div className="py-24 px-6">
+        <h1 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">Let's See What's Trending...</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 container mx-auto">
+          {salads.map((salad) => (
+            <div key={salad.id} className="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
+              <div className="relative">
+                <img 
+                  src={salad.image} 
+                  alt={salad.name}
+                  className="w-full h-48 object-cover"
+                  onError={(e) => {
+                    e.target.src = "/api/placeholder/400/400";
+                    e.target.alt = "Salad image placeholder";
+                  }}
+                />
+                <div className="absolute top-4 left-4">
+                  <div className="bg-black text-white font-bold rounded-full w-12 h-12 flex items-center justify-center text-lg">
+                    ${salad.price}
                   </div>
                 </div>
-                
-                {/* Content */}
-                <div className="p-6">
-                  <h2 className="text-2xl font-bold text-center mb-3">{salad.name}</h2>
-                  <p className="text-gray-700 text-center">
-                    {salad.description}
-                  </p>
-                </div>
               </div>
-            ))}
-          </div>
-          
-          {/* Wave Decoration at Bottom */}
-          <div className="absolute bottom-0 left-0 w-full">
-            <svg className="w-full" viewBox="0 0 1440 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0,96L80,85.3C160,75,320,53,480,64C640,75,800,117,960,122.7C1120,128,1280,96,1360,80L1440,64L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z" fill="#D9F99D" fillOpacity="0.5"></path>
-            </svg>
-          </div>
+              <div className="p-4">
+                <h2 className="text-lg font-bold text-center mb-2">{salad.name}</h2>
+                <p className="text-gray-700 text-center">
+                  {salad.description}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
       {/* Chill Corner Section */}
-      <section className="w-full bg-emerald-50 py-36 px-6 md:px-20 flex flex-col md:flex-row items-center justify-between min-h-[70vh]">
-        {/* Left Text Content */}
+      <section className="py-24 px-6 md:px-16 flex flex-col md:flex-row items-center justify-between">
         <div className="md:w-1/2 space-y-6 text-left">
-          <h2 className="text-5xl font-bold text-gray-900">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
             Chill Corner
           </h2>
-          <p className="text-gray-700 text-2xl">
+          <p className="text-gray-700 text-xl">
             Because good food deserves good vibes!
           </p>
           <button
             onClick={() => navigate("/chill-corner")}
-            className="bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition text-lg"
+            className="bg-green-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-green-700 transition text-lg"
           >
             Explore
           </button>
         </div>
-
-        {/* Right Image */}
-        <div className="md:w-1/2 flex justify-center mt-10 md:mt-0">
+        <div className="md:w-1/2 flex justify-center mt-12 md:mt-0">
           <img
             src="../icons/chill-corner.png"
             alt="Chill Corner Illustration"
@@ -182,7 +184,6 @@ const Home = () => {
           />
         </div>
       </section>
-
     </div>
   );
 };
