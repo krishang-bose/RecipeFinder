@@ -1,4 +1,5 @@
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
+import logo from '../icons/logo_no_bg.png';
 
 const Footer = () => {
   return (
@@ -7,7 +8,7 @@ const Footer = () => {
         {/* Logo and Description */}
         <div className="flex flex-col items-start">
           <div className="flex items-center mb-4">
-            <img src="../icons/logo.jpg" alt="ChefMate Logo" className="w-10 h-10 mr-2" />
+            <img src={logo} alt="Logo" className="w-22 h-15" />
             <h1 className="text-2xl font-bold">ChefMate</h1>
           </div>
           <p className="text-gray-600">

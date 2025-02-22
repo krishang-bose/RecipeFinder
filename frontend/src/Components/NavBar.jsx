@@ -3,6 +3,7 @@ import { FaSearch } from "react-icons/fa";
 import { useAuthStore } from "../store/useAuthStore";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import logo from "../icons/logo_no_bg.png";
 
 const NavBar = () => {
   const { authUser, logout } = useAuthStore();
@@ -36,14 +37,15 @@ const NavBar = () => {
       ];
     }
   };
-  
+
 
   return (
     <nav className="bg-peach-100">
       <div className="container mx-auto flex justify-between items-center py-8 px-4 md:px-10">
         {/* Logo Section */}
         <div className="flex items-center gap-2 font-bold uppercase text-2xl flex-1">
-          <img src="../icons/logo.jpg" alt="Logo" className="w-10 h-10" />
+          {/* <img src="../icons/logo_no_bg.png" alt="Logo" className="w-10 h-10" /> */}
+          <img src={logo} alt="Logo" className="w-22 h-15" />
           <p>Chef</p>
           <p className="text-emerald-600">Mate</p>
         </div>
