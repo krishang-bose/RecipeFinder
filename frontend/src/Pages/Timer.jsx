@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 const Timer1 = () => {
   const [time, setTime] = useState(0);

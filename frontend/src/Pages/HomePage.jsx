@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import Testimonials from "../Components/Testimonials";
 
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -129,7 +130,7 @@ const Home = () => {
 
       {/* Trending Section */}
       <div className="py-24 px-6">
-        <h1 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">Let's See What's Trending...</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">Let&apos;s See What&apos;s Trending...</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 container mx-auto">
           {salads.map((salad) => (
             <div key={salad.id} className="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
@@ -184,6 +185,9 @@ const Home = () => {
           />
         </div>
       </section>
+
+      <Testimonials />
+
     </div>
   );
 };
