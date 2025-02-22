@@ -12,7 +12,8 @@ import PropTypes from 'prop-types';
 import AboutUs from './pages/AboutUs';
 import Footer from './Components/Footer';
 import ChillCorner from './Pages/ChillCorner';
-
+import Timer1 from './Pages/Timer1';
+import Map from './Pages/Map';
 
 
 function App() {
@@ -48,6 +49,9 @@ const MainContent = ({ authUser }) => {
         <Route path="/login" element={!authUser ? <LoginPage /> : <Navigate to="/" />} />
         <Route path="/AboutUs" element={authUser ? <AboutUs /> : <Navigate to="/signup" />} />
         <Route path="/ChillCorner"element={authUser ? <ChillCorner /> : <Navigate to="/signup" />}/>
+        <Route path="/Timer1"element={authUser ? <Timer1 /> : <Navigate to="/signup" />}/>
+        <Route path="/Map"element={authUser ? <Map /> : <Navigate to="/signup" />}/>
+
       </Routes>
       <Footer/>
       <Toaster />
