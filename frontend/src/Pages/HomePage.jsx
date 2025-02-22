@@ -66,36 +66,11 @@ const Home = () => {
 
   return (
     <div className="min-h-screen relative" style={getGradientStyle()}>
-      {/* Intro Page - Moved down slightly */}
-      <div className="pt-24 pb-24">
-        <div className="max-w-4xl mx-auto px-6">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#963E1F]">Welcome to ChefMate</h1>
-          <div className="flex flex-col md:flex-row items-center gap-8">
-            <div className="flex-1">
-              <p className="text-xl leading-relaxed text-gray-800 mb-4">
-                Your ultimate kitchen companion! ChefMate simplifies cooking with smart recipe searches, AI-powered assistance, meal planning, and a foodie community.
-              </p>
-              <p className="text-xl leading-relaxed text-gray-800">
-                Discover trending recipes, scale ingredients, find nearby grocery stores, and set the perfect cooking vibe. Make every meal special! 🍽️✨
-              </p>
-            </div>
-            <div className="flex-shrink-0">
-              <div className="w-36 h-36 md:w-48 md:h-48 relative">
-                <img 
-                  src="/api/placeholder/400/400" 
-                  alt="chicken butter masala" 
-                  className="rounded-full bg-[#E8F3A3] shadow-lg"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      
       {/* Hero Section */}
       <section className="container mx-auto flex flex-col md:flex-row items-center justify-between py-24 px-6 md:px-16">
         <div className="md:w-1/2 text-left space-y-6">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+          <h1 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight">
             Your Kitchen, <br /> Your Rules... <br />
             <span className="text-emerald-600">We Just Make It Easier!</span>
           </h1>
@@ -127,6 +102,32 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Intro Page - Moved down slightly */}
+      <div className="pt-24 pb-24">
+        <div className="max-w-4xl mx-auto px-6">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#963E1F]">Welcome to ChefMate</h1>
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <div className="flex-1">
+              <p className="text-xl leading-relaxed text-gray-800 mb-4">
+                Your ultimate kitchen companion! ChefMate simplifies cooking with smart recipe searches, AI-powered assistance, meal planning, and a foodie community.
+              </p>
+              <p className="text-xl leading-relaxed text-gray-800">
+                Discover trending recipes, scale ingredients, find nearby grocery stores, and set the perfect cooking vibe. Make every meal special! 🍽️✨
+              </p>
+            </div>
+            <div className="flex-shrink-0">
+              <div className="w-36 h-36 md:w-48 md:h-48 relative">
+                <img 
+                  src="/api/placeholder/400/400" 
+                  alt="chicken butter masala" 
+                  className="rounded-full bg-[#E8F3A3] shadow-lg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Trending Section */}
       <div className="py-24 px-6">
