@@ -1,55 +1,53 @@
-import { FaFacebook } from "react-icons/fa";
-import { FaSquareInstagram } from "react-icons/fa6";
-import { FaSquareXTwitter } from "react-icons/fa6";
-import { IoLogoYoutube } from "react-icons/io";
-import { FaLinkedin } from "react-icons/fa";
-import { SiGooglemeet } from "react-icons/si";
-import { FaPhoneAlt } from "react-icons/fa";
-import { IoMdMail } from "react-icons/io";
+import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#111] text-white py-10 px-5">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start">
-        
-        <div className="md:w-1/2">
-          <img src="../icons/logo.jpg" alt="Logo" className="w-[90px] mb-4" />
-          <div className="flex space-x-4 my-4">
-            <FaFacebook className="w-6 h-6" />
-            <FaSquareInstagram className="w-6 h-6" />
-            <FaSquareXTwitter className="w-6 h-6" />
-            <IoLogoYoutube className="w-6 h-6"/>
-            <FaLinkedin className="w-6 h-6"/>
+    <footer className="bg-gray-100 py-10">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+        {/* Logo and Description */}
+        <div className="flex flex-col items-start">
+          <div className="flex items-center mb-4">
+            <img src="../icons/logo.jpg" alt="ChefMate Logo" className="w-10 h-10 mr-2" />
+            <h1 className="text-2xl font-bold">ChefMate</h1>
           </div>
-          <p className="text-sm text-gray-400">Copyright © 2025 Created By Team Tacos. All Rights Reserved.</p>
-          <p className="mt-3 flex items-center">
-            <SiGooglemeet className="w-5 mr-2"/>
-            Google Meet!
-          </p>
-          <p className="mt-2 flex items-center">
-            <FaPhoneAlt className="w-5 mr-2"/>
-            +91-1234-567-890
-          </p>
-          <p className="mt-2 flex items-center">
-            <IoMdMail className="w-5 mr-2"/>
-            recipefinder@gmail.com
+          <p className="text-gray-600">
+            Managing restaurant menus and other information including location and opening hours.
+            Managing the preparation of orders at a restaurant kitchen.
           </p>
         </div>
 
-        <div className="md:w-1/2 mt-10 md:mt-0 text-left">
-          <h1 className="text-lg font-semibold">Our Newsletter</h1>
-          <div className="w-16 h-1 bg-red-500 mt-1"></div>
-          <p className="mt-3 text-gray-400">Enter Your Email to get our News and updates.</p>
-          <form className="mt-4 flex">
-            <input
-              type="email"
-              placeholder="Enter Your Email"
-              className="p-2 w-full rounded-l-md bg-gray-800 text-white focus:outline-none"
-            />
-            <button type="submit" className="px-4 py-2 bg-gradient-to-r from-blue-500 to-red-500 rounded-r-md text-white font-medium">
-              Submit
-            </button>
-          </form>
+        {/* Navigation Links */}
+        <div className="space-y-2">
+          <h2 className="text-lg font-semibold mb-4">Navigation</h2>
+          <ul className="text-gray-600 space-y-1">
+            <li>Menu</li>
+            <li>Products</li>
+            <li>About Us</li>
+            <li>Dish</li>
+            <li>Asian</li>
+          </ul>
+        </div>
+
+        {/* Genres */}
+        <div className="space-y-2">
+          <h2 className="text-lg font-semibold mb-4">Genres</h2>
+          <ul className="text-gray-600 space-y-1">
+            <li>Salad</li>
+            <li>Spicy</li>
+            <li>Bowl</li>
+            <li>Kitchen</li>
+            <li>Home</li>
+          </ul>
+        </div>
+
+        {/* Social Media */}
+        <div className="space-y-4">
+          <h2 className="text-lg font-semibold mb-4">Follow Us</h2>
+          <div className="flex space-x-4">
+            <FaFacebookF className="text-gray-600 hover:text-black cursor-pointer" />
+            <FaTwitter className="text-gray-600 hover:text-black cursor-pointer" />
+            <FaInstagram className="text-gray-600 hover:text-black cursor-pointer" />
+          </div>
         </div>
       </div>
     </footer>
