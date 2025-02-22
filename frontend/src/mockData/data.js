@@ -6,23 +6,23 @@ export const NavBarMenu = [
   },
   {
     id:2,
-    title: "Utility",
+    title: "Courses",
     link:'#'
   },
   {
     id:3,
-    title: "Help",
-    link:'#'
-  },
-  {
-    id:4,
     title: "Community",
     link:'#'
   },
   {
-    id:5,
+    id:4,
     title: "Map",
-    link:'#'
+    link:'/Map'
+  },
+  {
+    id:5,
+    title: "Timer",
+    link:'/Timer1'
   },
 ];
 

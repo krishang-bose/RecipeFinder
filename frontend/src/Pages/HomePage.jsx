@@ -171,7 +171,7 @@ const Home = () => {
             Because good food deserves good vibes!
           </p>
           <button
-            onClick={() => navigate("/chill-corner")}
+            onClick={() => navigate("/chillcorner")}
             className="bg-green-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-green-700 transition text-lg"
           >
             Explore
