@@ -7,6 +7,7 @@ import cook from "../icons/cook.png";
 import roll from '../icons/roll.png';
 import chill from '../icons/chill.png';
 import RecipeDiarySection from "./RecipeDiary";
+import Trending from "./Trending";
 
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -43,22 +44,18 @@ const Home = () => {
     }
   ];
 
-  // Very slow color transition effect
   useEffect(() => {
     const interval = setInterval(() => {
       setGradientProgress(prev => {
-        // Increment by 0.1% every 5 seconds - extremely slow
         const newValue = prev + 0.1;
         return newValue > 100 ? 0 : newValue;
       });
-    }, 5000); // Update every 5 seconds
+    }, 5000);
     
     return () => clearInterval(interval);
   }, []);
 
-  // Calculate the gradient color based on progress
   const getGradientStyle = () => {
-    // Start with yellow-green, slowly transition to lime-green
     return {
       background: `linear-gradient(135deg, 
         rgba(249, 250, 230, ${1 - gradientProgress/100}) 0%, 
@@ -99,11 +96,6 @@ const Home = () => {
         </div>
         <div className="md:w-1/2 flex justify-center mt-12 md:mt-0">
           <div className="w-64 h-64 md:w-80 md:h-80 bg-white/50 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg">
-            {/* <img
-              src="../icons/hera.png"
-              alt="Cooking Illustration"
-              className="max-w-full h-auto object-contain p-6"
-            /> */}
           <img src={cook} alt="Cook" className="w-500 h-80" />
           </div>
         </div>
@@ -131,7 +123,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Trending Section */}
+      {/* Trending Section
       <div className="py-24 px-6">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">Let&apos;s See What&apos;s Trending...</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 container mx-auto">
@@ -154,7 +146,8 @@ const Home = () => {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
+      <Trending/>
 
       {/* Chill Corner Section */}
       <section className="py-24 px-6 md:px-16 flex flex-col md:flex-row items-center justify-between">
@@ -186,6 +179,7 @@ const Home = () => {
       <Testimonials />
 
     </div>
+
   );
 };
 
