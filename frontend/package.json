@@ -12,6 +12,7 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.0.5",
     "axios": "^1.7.9",
+    "gsap": "^3.12.7",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.475.0",
     "motion": "^12.4.2",

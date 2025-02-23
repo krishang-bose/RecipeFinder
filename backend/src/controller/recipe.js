@@ -10,18 +10,18 @@ const searchRecipes = (req, res) => {
 
   const recipes = getRecipesData();
 
-  // Filtering of the recipes 
   const filteredRecipes = recipes.filter(recipe => {
-    const nameMatch = recipe.name.toLowerCase().includes(query);
-    const ingredientMatch = recipe.ingredients.toLowerCase().includes(query);
+    const nameMatch = (recipe.RecipeName?.toLowerCase() || "").includes(query);
+    const ingredientMatch = (recipe.Ingredients?.toLowerCase() || "").includes(query);
     return nameMatch || ingredientMatch;
   });
-
+  
   if (filteredRecipes.length === 0) {
     return res.status(404).json({ message: "No recipes found." });
   }
 
   res.json(filteredRecipes);
+  console.log("Server response ",filteredRecipes);
 };
 
 export default {

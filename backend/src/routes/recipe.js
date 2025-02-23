@@ -1,5 +1,5 @@
 import { Router } from "express";
-const router = Router(); // ✅ Correct initialization
+const router = Router();
 
 import recipeController from "../controller/recipe.js";
 
