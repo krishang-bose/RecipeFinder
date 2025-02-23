@@ -3,37 +3,49 @@ import diary from '../icons/diary.png';
 
 const RecipeDiarySection = () => {
   return (
-    <section className="py-24 px-6 md:px-16">
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
+    <div className="relative min-h-[500px] bg-gradient-to-br from-[#FFFBE6] to-[#F2F9C0] overflow-hidden">
+      <div className="container mx-auto px-6 py-16 flex flex-col md:flex-row items-center justify-between relative z-10">
         {/* Left side with illustration */}
         <div className="md:w-1/2 flex justify-center mb-8 md:mb-0">
           <div className="relative w-64 h-64 md:w-80 md:h-80">
-          <img src={diary} alt="Diary" className="w-100 h-50" />
+            <img src={diary} alt="Diary" className="w-100 h-50" />
           </div>
         </div>
 
         {/* Right side with text */}
         <div className="md:w-1/2 text-left space-y-6">
           <div className="space-y-2">
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 text-center">Recipe</h2>
-            <h2 className="text-3xl md:text-5xl font-bold text-emerald-600 text-center">Diary</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-black">Recipe</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-teal-600">Diary</h2>
           </div>
           
-          <p className="text-gray-700 text-xl text-center">
+          <p className="text-2xl md:text-3xl text-gray-800 font-medium">
             Because good food deserves good vibes!
           </p>
           
-          <div className="flex justify-center">
-            <button
-                onClick={() => navigate("/MyRecipeDiary")}
-                className="bg-green-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-green-700 transition text-lg"
-            >
-                Explore
-            </button>
-          </div>
+          <button className="px-8 py-3 text-lg font-semibold rounded-full bg-gradient-to-r from-green-400 to-emerald-400 text-white hover:from-green-500 hover:to-emerald-500 transition-colors duration-300">
+            Explore
+          </button>
         </div>
       </div>
-    </section>
+
+      {/* Decorative elements */}
+      <div className="absolute top-10 right-10">
+        <div className="w-12 h-12 text-yellow-400">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M2 2L22 22M2 22L22 2" />
+          </svg>
+        </div>
+      </div>
+      
+      <div className="absolute bottom-10 left-10">
+        <div className="w-12 h-12 text-yellow-400">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M2 2L22 22M2 22L22 2" />
+          </svg>
+        </div>
+      </div>
+    </div>
   );
 };
 
