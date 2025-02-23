@@ -5,31 +5,31 @@ const Trending = () => {
     const salads = [
         {
           id: 1,
-          name: 'Special Salad',
-          price: 12,
+          name: 'Special Rolls',
+          price: 120,
           image: 'image 1',
-          description: 'Food is any substance consumed by an organism for nutritional support.'
+          description: 'Delicious, portable wraps filled with a variety of ingredients like veggies, meats, and sauces, wrapped in bread.'
         },
         {
           id: 2,
-          name: 'Russian Salad',
-          price: 12,
+          name: 'Special Rolls',
+          price: 120,
           image: 'image 2',
-          description: 'Food is any substance consumed by an organism for nutritional support.'
+          description: 'Delicious, portable wraps filled with a variety of ingredients like veggies, meats, and sauces, wrapped in bread.'
         },
         {
           id: 3,
-          name: 'Asian Salad',
-          price: 12,
+          name: 'Special Rolls',
+          price: 120,
           image: 'image 3',
-          description: 'Food is any substance consumed by an organism for nutritional support.'
+          description: 'Delicious, portable wraps filled with a variety of ingredients like veggies, meats, and sauces, wrapped in bread.'
         },
         {
           id: 4,
-          name: 'American Salad',
-          price: 12,
+          name: 'Special Rolls',
+          price: 120,
           image: 'image 4',
-          description: 'Food is any substance consumed by an organism for nutritional support.'
+          description: 'Delicious, portable wraps filled with a variety of ingredients like veggies, meats, and sauces, wrapped in bread.'
         }
       ];
     return (
