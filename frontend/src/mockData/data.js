@@ -7,12 +7,12 @@ export const NavBarMenu = [
   {
     id:2,
     title: "Courses",
-    link:'#'
+    link:'/Courses'
   },
   {
     id:3,
     title: "Community",
-    link:'#'
+    link:'/CommunityCorner'
   },
   {
     id:4,

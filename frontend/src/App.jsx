@@ -14,6 +14,9 @@ import Footer from './Components/Footer';
 import ChillCorner from './Pages/ChillCorner';
 import Timer1 from './Pages/Timer1';
 import Map from './Pages/Map';
+import CommunityCorner from './Pages/CommunityCorner';
+import MyRecipeDiary, { CreateRecipe, RecipeDetail } from './Pages/MyRecipe';
+import CookingCourses from'./Pages/CookingCourses';
 
 
 function App() {
@@ -49,9 +52,13 @@ const MainContent = ({ authUser }) => {
         <Route path="/login" element={!authUser ? <LoginPage /> : <Navigate to="/" />} />
         <Route path="/AboutUs" element={authUser ? <AboutUs /> : <Navigate to="/signup" />} />
         <Route path="/ChillCorner"element={authUser ? <ChillCorner /> : <Navigate to="/signup" />}/>
+        <Route path="/MyRecipeDiary"element={authUser ? <MyRecipeDiary /> : <Navigate to="/signup" />}/>
         <Route path="/Timer1"element={authUser ? <Timer1 /> : <Navigate to="/signup" />}/>
         <Route path="/Map"element={authUser ? <Map /> : <Navigate to="/signup" />}/>
-
+        <Route path="/CommunityCorner"element={authUser ? <CommunityCorner /> : <Navigate to="/signup" />}/>
+        <Route path="/Courses"element={authUser ? <CookingCourses/> : <Navigate to="/signup" />}/>
+        <Route path="/MyRecipeDiary"element={authUser ? <RecipeDetail/> : <Navigate to="/signup" />}/>
+        <Route path="/CreateRecipe"element={authUser ? <CreateRecipe/> : <Navigate to="/signup" />}/>
       </Routes>
       <Footer/>
       <Toaster />
@@ -59,7 +66,6 @@ const MainContent = ({ authUser }) => {
   );
 };
 
-// ✅ Define PropTypes
 MainContent.propTypes = {
   authUser: PropTypes.any, 
 };

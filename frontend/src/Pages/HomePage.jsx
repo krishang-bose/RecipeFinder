@@ -66,8 +66,7 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen relative" style={getGradientStyle()}>
-      
+    <div className="min-h-screen" style={getGradientStyle()}>
       {/* Hero Section */}
       <section className="container mx-auto flex flex-col md:flex-row items-center justify-between py-24 px-6 md:px-16">
         <div className="md:w-1/2 text-left space-y-6">
@@ -100,6 +99,7 @@ const Home = () => {
         </div>
       </section>
 
+
       {/* Intro Page - Moved down slightly */}
       <div className="pt-24 pb-24">
         <div className="max-w-4xl mx-auto px-6">
@@ -122,7 +122,6 @@ const Home = () => {
         </div>
       </div>
       <Trending/>
-
 
       {/* Chill Corner Section */}
       <section className="py-24 px-6 md:px-16 flex flex-col md:flex-row items-center justify-between">
@@ -149,10 +148,10 @@ const Home = () => {
         </div>
       </section>
 
+
       <RecipeDiarySection />
 
       <Testimonials />
-
     </div>
 
   );
