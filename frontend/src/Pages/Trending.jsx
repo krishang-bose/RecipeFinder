@@ -1,4 +1,5 @@
 import React from 'react';
+import roll from '../icons/roll.png'
 
 const Trending = () => {
     const salads = [
