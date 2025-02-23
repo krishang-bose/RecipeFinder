@@ -68,7 +68,9 @@ const NavBar = () => {
 
         {/* Icons Section */}
         <div className="flex items-center gap-4 flex-1 justify-end">
-          <button className="text-2xl hover:bg-emerald-600 hover:text-white rounded-full p-2 duration-300">
+          <button 
+            onClick={()=> navigate("/Search")}
+            className="text-2xl hover:bg-emerald-600 hover:text-white rounded-full p-2 duration-300">
             <FaSearch />
           </button>
 
