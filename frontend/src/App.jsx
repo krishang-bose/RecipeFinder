@@ -16,6 +16,7 @@ import Timer1 from './Pages/Timer1';
 import Map from './Pages/Map';
 import CommunityCorner from './Pages/CommunityCorner';
 import MyRecipeDiary from './Pages/MyRecipe';
+import CookingCourses from'./Pages/CookingCourses';
 
 
 function App() {
@@ -55,6 +56,8 @@ const MainContent = ({ authUser }) => {
         <Route path="/Timer1"element={authUser ? <Timer1 /> : <Navigate to="/signup" />}/>
         <Route path="/Map"element={authUser ? <Map /> : <Navigate to="/signup" />}/>
         <Route path="/CommunityCorner"element={authUser ? <CommunityCorner /> : <Navigate to="/signup" />}/>
+        <Route path="/Courses"element={authUser ? <CookingCourses/> : <Navigate to="/signup" />}/>
+        
       </Routes>
       <Footer/>
       <Toaster />
