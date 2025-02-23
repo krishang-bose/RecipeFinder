@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import Testimonials from "../Components/Testimonials";
-import SearchPage from "./SearchBar";
 
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -128,9 +127,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-
-      <SearchPage />
 
       {/* Chill Corner Section */}
       <section className="py-24 px-6 md:px-16 flex flex-col md:flex-row items-center justify-between">
