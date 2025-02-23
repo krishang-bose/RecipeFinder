@@ -12,8 +12,8 @@ const searchRecipes = (req, res) => {
 
   // Filtering of the recipes 
   const filteredRecipes = recipes.filter(recipe => {
-    const nameMatch = recipe.name.toLowerCase().includes(query);
-    const ingredientMatch = recipe.ingredients.toLowerCase().includes(query);
+    const nameMatch = recipe.RecipeName.toLowerCase().includes(query);
+    const ingredientMatch = recipe.Ingredients.toLowerCase().includes(query);
     return nameMatch || ingredientMatch;
   });
 
