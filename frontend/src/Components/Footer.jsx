@@ -1,4 +1,5 @@
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import logo from '../icons/logo_no_bg.png';
 
 const Footer = () => {
@@ -21,11 +22,11 @@ const Footer = () => {
         <div className="space-y-2">
           <h2 className="text-lg font-semibold mb-4">Navigation</h2>
           <ul className="text-gray-600 space-y-1">
-            <li>Menu</li>
-            <li>Products</li>
-            <li>About Us</li>
-            <li>Dish</li>
-            <li>Asian</li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/Map">Map</Link></li>
+            <li><Link to="/AboutUs">About Us</Link></li>
+            <li><Link to="/CommunityCorner">Community</Link></li>
+            <li><Link to="/Courses">Courses</Link></li>
           </ul>
         </div>
 
@@ -33,11 +34,11 @@ const Footer = () => {
         <div className="space-y-2">
           <h2 className="text-lg font-semibold mb-4">Genres</h2>
           <ul className="text-gray-600 space-y-1">
-            <li>Salad</li>
-            <li>Spicy</li>
-            <li>Bowl</li>
-            <li>Kitchen</li>
-            <li>Home</li>
+            <li><Link to="/Timer1">Timer</Link></li>
+            <li><Link to="/spicy">Spicy</Link></li>
+            <li><Link to="/bowl">Bowl</Link></li>
+            <li><Link to="/kitchen">Kitchen</Link></li>
+            <li><Link to="/">Home</Link></li>
           </ul>
         </div>
 
