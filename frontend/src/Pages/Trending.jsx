@@ -1,4 +1,5 @@
 import React from 'react';
+import roll from '../icons/roll.png'
 
 const Trending = () => {
     const salads = [
@@ -38,18 +39,10 @@ const Trending = () => {
           {salads.map((salad) => (
             <div key={salad.id} className="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
               <div className="relative">
-                <img 
-                  src={salad.image} 
-                  alt={salad.name}
-                  className="w-full h-48 object-cover"
-                  onError={(e) => {
-                    e.target.src = "/api/placeholder/400/400";
-                    e.target.alt = "Salad image placeholder";
-                  }}
-                />
+                <img src={roll} alt="Roll" className="w-40 h-40 rounded-full mx-auto m-5" />
                 <div className="absolute top-4 left-4">
                   <div className="bg-black text-white font-bold rounded-full w-12 h-12 flex items-center justify-center text-lg">
-                    ${salad.price}
+                    ₹{salad.price}
                   </div>
                 </div>
               </div>

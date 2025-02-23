@@ -1,22 +1,27 @@
+import sk from '../icons/sk.png'
+import ks from '../icons/ks.jpg'
+import gr from '../icons/gr.jpeg'
+import jo from '../icons/jo.jpeg'
+
 const testimonials = [
   {
     name: "Sanjeev Kapoor",
-    image: "https://via.placeholder.com/100",
+    image: sk,
     text: "A customer is a person or business that buys goods or services from another business. Customers are crucial because they generate revenue. Without them, businesses would go out of business."
   },
   {
     name: "Kabita Singh",
-    image: "https://via.placeholder.com/100",
+    image: ks,
     text: "A customer is a person or business that buys goods or services from another business. Customers are crucial because they generate revenue. Without them, businesses would go out of business."
   },
   {
     name: "Gordon Ramsay",
-    image: "https://via.placeholder.com/100",
+    image: gr,
     text: "A customer is a person or business that buys goods or services from another business. Customers are crucial because they generate revenue. Without them, businesses would go out of business."
   },
   {
     name: "Jamie Oliver",
-    image: "https://via.placeholder.com/100",
+    image: jo,
     text: "A customer is a person or business that buys goods or services from another business. Customers are crucial because they generate revenue. Without them, businesses would go out of business."
   }
 ];
@@ -32,7 +37,7 @@ const Testimonials = () => {
           A customer is a person or business that buys goods or services from another business. Customers are crucial because they generate revenue. Without them, businesses would go out of business.
         </p>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-20">
         {testimonials.map((testimonial, index) => (
           <div
             key={index}

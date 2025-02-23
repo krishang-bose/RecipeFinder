@@ -3,6 +3,7 @@ import krishang from '../icons/krishang.png';
 import shrey from '../icons/shrey.png';
 import stuti from '../icons/stuti.png';
 import ipshita from '../icons/ipshita.png';
+import contactus from '../icons/contactus.png';
 
 const AboutUs = () => {
   const creators = [
@@ -60,11 +61,12 @@ const AboutUs = () => {
         <div className="flex flex-col md:flex-row items-center gap-8">
           {/* Illustration */}
           <div className="w-full md:w-1/2">
-            <img 
+            {/* <img 
               src="/api/placeholder/400/400" 
               alt="Cooking illustration"
               className="w-full"
-            />
+            /> */}
+            <img src={contactus} alt="contactus" className="w-100 h-100" />
           </div>
           
           {/* Contact Form */}

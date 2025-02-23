@@ -11,7 +11,7 @@ const recipesData = [
   { id: 6, title: "Margarita Pizza", image: "https://i.pinimg.com/736x/62/a0/50/62a050cfa783c0f897bcf25325be5fac.jpg", description: "A classic Italian pizza" , instructions: "lorem ipsum"}
 ];
 
-export function Home() {
+export default function MyRecipeDiary() {
   return (
     <div className="min-h-screen bg-[#FAFAF9]">
       <div className="container mx-auto px-4 py-12">

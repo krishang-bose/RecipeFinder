@@ -1,4 +1,5 @@
 import React from 'react';
+import diary from '../icons/diary.png';
 
 const RecipeDiarySection = () => {
   return (
@@ -7,11 +8,7 @@ const RecipeDiarySection = () => {
         {/* Left side with illustration */}
         <div className="md:w-1/2 flex justify-center mb-8 md:mb-0">
           <div className="relative w-64 h-64 md:w-80 md:h-80">
-            <img
-              src="/api/placeholder/400/400"
-              alt="Recipe book illustration"
-              className="w-full h-full object-contain"
-            />
+            <img src={diary} alt="Diary" className="w-100 h-50" />
           </div>
         </div>
 
