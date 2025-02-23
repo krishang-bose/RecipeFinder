@@ -60,6 +60,7 @@ const MainContent = ({ authUser }) => {
         <Route path="/Courses"element={authUser ? <CookingCourses/> : <Navigate to="/signup" />}/>
         <Route path="/MyRecipeDiary"element={authUser ? <RecipeDetail/> : <Navigate to="/signup" />}/>
         <Route path="/CreateRecipe"element={authUser ? <CreateRecipe/> : <Navigate to="/signup" />}/>
+        <Route path="/recipe/:id"element={authUser ? <RecipeDetail/> : <Navigate to="/signup" />}/>
         <Route path="/Search"element={authUser ? <RecipeSearch/> : <Navigate to="/signup" />}/>
         
       </Routes>
