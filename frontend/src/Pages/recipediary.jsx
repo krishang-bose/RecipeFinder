@@ -1,7 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import diary from '../icons/diary.png';
 
 const RecipeDiarySection = () => {
+  const navigate = useNavigate();
   return (
     <section className="py-24 px-6 md:px-16">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
