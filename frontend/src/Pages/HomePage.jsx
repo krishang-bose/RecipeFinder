@@ -2,6 +2,11 @@ import { useState, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import Testimonials from "../Components/Testimonials";
+import welcome from "../icons/welcome.png";
+import cook from "../icons/cook.png";
+import chill from '../icons/chill.png';
+import RecipeDiarySection from "./RecipeDiary";
+import Trending from "./Trending";
 
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -10,50 +15,46 @@ const Home = () => {
   const salads = [
     {
       id: 1,
-      name: 'Special Salad',
-      price: 12,
+      name: 'Special Rolls',
+      price: 120,
       image: 'image 1',
-      description: 'Food is any substance consumed by an organism for nutritional support.'
+      description: 'Delicious, portable wraps filled with a variety of ingredients like veggies, meats, and sauces, wrapped in bread.'
     },
     {
       id: 2,
-      name: 'Russian Salad',
-      price: 12,
+      name: 'Special Rolls',
+      price: 120,
       image: 'image 2',
-      description: 'Food is any substance consumed by an organism for nutritional support.'
+      description: 'Delicious, portable wraps filled with a variety of ingredients like veggies, meats, and sauces, wrapped in bread.'
     },
     {
       id: 3,
-      name: 'Asian Salad',
-      price: 12,
+      name: 'Special Rolls',
+      price: 120,
       image: 'image 3',
-      description: 'Food is any substance consumed by an organism for nutritional support.'
+      description: 'Delicious, portable wraps filled with a variety of ingredients like veggies, meats, and sauces, wrapped in bread.'
     },
     {
       id: 4,
-      name: 'American Salad',
-      price: 12,
+      name: 'Special Rolls',
+      price: 120,
       image: 'image 4',
-      description: 'Food is any substance consumed by an organism for nutritional support.'
+      description: 'Delicious, portable wraps filled with a variety of ingredients like veggies, meats, and sauces, wrapped in bread.'
     }
   ];
 
-  // Very slow color transition effect
   useEffect(() => {
     const interval = setInterval(() => {
       setGradientProgress(prev => {
-        // Increment by 0.1% every 5 seconds - extremely slow
         const newValue = prev + 0.1;
         return newValue > 100 ? 0 : newValue;
       });
-    }, 5000); // Update every 5 seconds
+    }, 5000);
     
     return () => clearInterval(interval);
   }, []);
 
-  // Calculate the gradient color based on progress
   const getGradientStyle = () => {
-    // Start with yellow-green, slowly transition to lime-green
     return {
       background: `linear-gradient(135deg, 
         rgba(249, 250, 230, ${1 - gradientProgress/100}) 0%, 
@@ -94,11 +95,7 @@ const Home = () => {
         </div>
         <div className="md:w-1/2 flex justify-center mt-12 md:mt-0">
           <div className="w-64 h-64 md:w-80 md:h-80 bg-white/50 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg">
-            <img
-              src="../icons/hera.png"
-              alt="Cooking Illustration"
-              className="max-w-full h-auto object-contain p-6"
-            />
+          <img src={cook} alt="Cook" className="w-500 h-80" />
           </div>
         </div>
       </section>
@@ -106,90 +103,58 @@ const Home = () => {
       {/* Intro Page - Moved down slightly */}
       <div className="pt-24 pb-24">
         <div className="max-w-4xl mx-auto px-6">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#963E1F]">Welcome to ChefMate</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#963E1F] pl-17">Welcome to ChefMate</h1>
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="flex-1">
-              <p className="text-xl leading-relaxed text-gray-800 mb-4">
+              <p className="text-xl leading-relaxed text-gray-800 mb-4 text-center">
                 Your ultimate kitchen companion! ChefMate simplifies cooking with smart recipe searches, AI-powered assistance, meal planning, and a foodie community.
               </p>
-              <p className="text-xl leading-relaxed text-gray-800">
-                Discover trending recipes, scale ingredients, find nearby grocery stores, and set the perfect cooking vibe. Make every meal special! 🍽️✨
+              <p className="text-xl leading-relaxed text-gray-800 text-center">
+                Discover trending recipes, scale ingredients, find nearby grocery stores, and set the perfect cooking vibe. <br/> Make every meal special! 🍽️✨
               </p>
             </div>
-            <div className="flex-shrink-0">
-              <div className="w-36 h-36 md:w-48 md:h-48 relative">
-                <img 
-                  src="/api/placeholder/400/400" 
-                  alt="chicken butter masala" 
-                  className="rounded-full bg-[#E8F3A3] shadow-lg"
-                />
+            <div className="flex-shrink-0 relative top-[-100px] md:top-[-100px]">
+              <div className="w-36 h-36 md:w-48 md:h-48">
+                <img src={welcome} alt="Welcome" className="w-300 h-80" />
               </div>
             </div>
           </div>
         </div>
       </div>
+      <Trending/>
 
-      {/* Trending Section */}
-      <div className="py-24 px-6">
-        <h1 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">Let&apos;s See What&apos;s Trending...</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 container mx-auto">
-          {salads.map((salad) => (
-            <div key={salad.id} className="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
-              <div className="relative">
-                <img 
-                  src={salad.image} 
-                  alt={salad.name}
-                  className="w-full h-48 object-cover"
-                  onError={(e) => {
-                    e.target.src = "/api/placeholder/400/400";
-                    e.target.alt = "Salad image placeholder";
-                  }}
-                />
-                <div className="absolute top-4 left-4">
-                  <div className="bg-black text-white font-bold rounded-full w-12 h-12 flex items-center justify-center text-lg">
-                    ${salad.price}
-                  </div>
-                </div>
-              </div>
-              <div className="p-4">
-                <h2 className="text-lg font-bold text-center mb-2">{salad.name}</h2>
-                <p className="text-gray-700 text-center">
-                  {salad.description}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
 
       {/* Chill Corner Section */}
       <section className="py-24 px-6 md:px-16 flex flex-col md:flex-row items-center justify-between">
         <div className="md:w-1/2 space-y-6 text-left">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-            Chill Corner
-          </h2>
-          <p className="text-gray-700 text-xl">
+          <div className="space-y-2">
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 text-center">Chill</h2>
+            <h2 className="text-3xl md:text-5xl font-bold text-emerald-600 text-center">Corner</h2>
+          </div>
+          
+          <p className="text-gray-700 text-xl text-center">
             Because good food deserves good vibes!
           </p>
-          <button
-            onClick={() => navigate("/chillcorner")}
-            className="bg-green-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-green-700 transition text-lg"
-          >
-            Explore
-          </button>
+          <div className="flex justify-center">
+            <button
+              onClick={() => navigate("/chillcorner")}
+              className="bg-green-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-green-700 transition text-lg mx-auto"
+            >
+              Explore
+            </button>
+          </div>
         </div>
         <div className="md:w-1/2 flex justify-center mt-12 md:mt-0">
-          <img
-            src="../icons/chill-corner.png"
-            alt="Chill Corner Illustration"
-            className="w-full max-w-lg"
-          />
+          <img src={chill} alt="Chill" className="w-200 h-100" />
         </div>
       </section>
+
+      <RecipeDiarySection />
 
       <Testimonials />
 
     </div>
+
   );
 };
 
