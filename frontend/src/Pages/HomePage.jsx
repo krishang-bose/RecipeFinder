@@ -100,7 +100,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
       {/* Intro Page - Moved down slightly */}
       <div className="pt-24 pb-24">
         <div className="max-w-4xl mx-auto px-6">
