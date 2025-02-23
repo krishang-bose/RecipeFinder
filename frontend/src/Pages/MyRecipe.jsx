@@ -3,7 +3,21 @@ import { useState } from "react";
 import { ChevronLeft, PlusCircle, Heart, ChevronRight } from "lucide-react";
 
 const recipesData = [
-  { id: 1, title: "Pasta Carbonara", image: "https://i.pinimg.com/736x/31/bd/88/31bd88cc2c87124bc29a9009609be881.jpg", description: "Classic Italian pasta dish.", instructions: "lorem ipsum"},
+  {
+    "id": 1,
+    "title": "Pasta Carbonara",
+    "image": "https://i.pinimg.com/736x/31/bd/88/31bd88cc2c87124bc29a9009609be881.jpg",
+    "description": "Classic Italian pasta dish.",
+    "instructions": [
+      "Boil the Pasta: Bring a large pot of salted water to a boil. Cook the spaghetti until al dente. Reserve about ½ cup of pasta water before draining.",
+      "Prepare the Sauce: In a bowl, whisk together the eggs, grated cheese, and a generous amount of black pepper. Set aside.",
+      "Cook the Pancetta: In a large pan over medium heat, cook the diced pancetta (or guanciale) until crispy. Optionally, add crushed garlic for extra flavor, then remove it before adding pasta.",
+      "Combine Pasta & Pancetta: Add the drained pasta to the pan with pancetta. Toss well to coat with the rendered fat. Remove the pan from heat.",
+      "Create the Creamy Sauce: Slowly pour in the egg mixture while tossing the pasta continuously. If needed, add reserved pasta water (a little at a time) to achieve a silky sauce.",
+      "Final Touch: Season with extra black pepper and more grated cheese. Serve immediately and enjoy!"
+    ]
+  },
+  
   { id: 2, title: "Chocolate Cake", image: "https://i.pinimg.com/736x/fd/49/15/fd49150a45f56427ddc5da1da08861f4.jpg", description: "Delicious and moist chocolate cake.", instructions: "lorem ipsum"},
   { id: 3, title: "Caesar Salad", image: "https://i.pinimg.com/736x/2b/76/21/2b7621769b5076421937b37856188ed3.jpg", description: "Healthy and tasty salad.", instructions: "lorem ipsum"},
   { id: 4, title: "Chicken Tikka Masala", image: "https://i.pinimg.com/474x/18/e2/3e/18e23ebd4e6150549880665c52b8d80a.jpg", description: "Indian Chicken Gravy Dish.", instructions: "lorem ipsum"},
