@@ -71,28 +71,27 @@ const Home = () => {
       
       {/* Hero Section */}
       <section className="container mx-auto flex flex-col md:flex-row items-center justify-between py-24 px-6 md:px-16">
-        <div className="md:w-1/2 text-left space-y-6">
+        <div className="md:w-1/2 text-left space-y-8">  {/* Increased space-y from 6 to 8 */}
           <h1 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight">
             Your Kitchen, <br /> Your Rules... <br />
             <span className="text-emerald-600">We Just Make It Easier!</span>
           </h1>
-          <div className="bg-white/50 backdrop-blur-sm px-6 py-4 rounded-xl flex flex-col md:flex-row items-start md:items-center gap-4 shadow-md w-full">
+          <div className="bg-white/50 backdrop-blur-sm px-6 py-6 rounded-xl flex flex-col md:flex-row items-start md:items-center gap-6 shadow-md w-full"> {/* Increased padding and gap */}
             <p className="text-gray-700 text-xl font-medium">
-              Hey Stuti, what are you craving today?
+                Hey Stuti, what are you craving today?
             </p>
             <div className="flex items-center bg-white rounded-full px-4 py-2 shadow-sm w-full md:w-96">
-              <input
-                type="text"
-                placeholder="Search for Recipes"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full px-3 py-2 border-none outline-none bg-transparent text-gray-700 text-lg"
-              />
-              <button className="text-emerald-600">
-                <FaSearch size={20} />
-              </button>
+                <button
+                    onClick={() => {navigate('/search')}}
+                    className="w-full px-3 py-2 text-left text-gray-700 text-lg hover:bg-gray-50 transition-colors"
+                >
+                    Search for Recipes
+                </button>
+                <button className="text-emerald-600">
+                    <FaSearch size={20} />
+                </button>
             </div>
-          </div>
+        </div>
         </div>
         <div className="md:w-1/2 flex justify-center mt-12 md:mt-0">
           <div className="w-64 h-64 md:w-80 md:h-80 bg-white/50 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg">
