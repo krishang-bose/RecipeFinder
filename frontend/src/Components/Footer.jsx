@@ -35,10 +35,10 @@ const Footer = () => {
           <h2 className="text-lg font-semibold mb-4">Genres</h2>
           <ul className="text-gray-600 space-y-1">
             <li><Link to="/Timer1">Timer</Link></li>
-            <li><Link to="/spicy">Spicy</Link></li>
-            <li><Link to="/bowl">Bowl</Link></li>
-            <li><Link to="/kitchen">Kitchen</Link></li>
-            <li><Link to="/">Home</Link></li>
+            <li><Link to="/ChillCorner">Chill Corner</Link></li>
+            <li><Link to="/MyRecipeDiary">Recipe Diary</Link></li>
+            <li><Link to="/CreateRecipe">Create Recipe</Link></li>
+            <li><Link to="/Search">Search </Link></li>
           </ul>
         </div>
 

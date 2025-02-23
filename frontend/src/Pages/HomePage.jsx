@@ -123,9 +123,9 @@ const Home = () => {
       <Trending/>
 
       {/* Chill Corner Section */}
-      <section className="py-24 px-6 md:px-16 flex flex-col md:flex-row items-center justify-between">
-        <div className="md:w-1/2 space-y-6 text-left">
-          <div className="space-y-2">
+      <section className="py-12 px-4 md:px-8 flex flex-col md:flex-row items-center justify-between">
+        <div className="md:w-1/2 space-y-4 text-left">
+          <div className="space-y-1">
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 text-center">Chill</h2>
             <h2 className="text-3xl md:text-5xl font-bold text-emerald-600 text-center">Corner</h2>
           </div>
@@ -136,13 +136,13 @@ const Home = () => {
           <div className="flex justify-center">
             <button
               onClick={() => navigate("/chillcorner")}
-              className="bg-green-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-green-700 transition text-lg mx-auto"
+              className="bg-green-600 text-white px-6 py-2 rounded-xl font-semibold hover:bg-green-700 transition text-lg mx-auto"
             >
               Explore
             </button>
           </div>
         </div>
-        <div className="md:w-1/2 flex justify-center mt-12 md:mt-0">
+        <div className="md:w-1/2 flex justify-center mt-8 md:mt-0">
           <img src={chill} alt="Chill" className="w-200 h-100" />
         </div>
       </section>
