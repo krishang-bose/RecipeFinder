@@ -18,7 +18,7 @@ export default function MyRecipeDiary() {
         <div className="flex items-center justify-between mb-12">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900">My Recipes</h1>
           <Link 
-            to="/create" 
+            to="/CreateRecipe" 
             className="group flex items-center gap-2 px-5 py-2.5 bg-black text-white rounded-full transition-all duration-300 hover:bg-gray-800"
           >
             <PlusCircle size={20} className="transition-transform group-hover:rotate-90" />
@@ -105,7 +105,7 @@ export function CreateRecipe() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("New Recipe: ", { title, description });
-    navigate("/");
+    navigate("/MyRecipeDiary");
   };
 
   return (

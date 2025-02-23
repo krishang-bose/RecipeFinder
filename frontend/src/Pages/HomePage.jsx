@@ -2,12 +2,8 @@ import { useState, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import Testimonials from "../Components/Testimonials";
-import welcome from "../icons/welcome.png";
-import cook from "../icons/cook.png";
-import roll from '../icons/roll.png';
-import chill from '../icons/chill.png';
-import RecipeDiarySection from "./RecipeDiary";
 import Trending from "./Trending";
+import RecipeDiarySection from './recipediary'; // Updated import path
 
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -16,31 +12,31 @@ const Home = () => {
   const salads = [
     {
       id: 1,
-      name: 'Special Rolls',
-      price: 120,
+      name: 'Special Salad',
+      price: 12,
       image: 'image 1',
-      description: 'Delicious, portable wraps filled with a variety of ingredients like veggies, meats, and sauces, wrapped in bread.'
+      description: 'Food is any substance consumed by an organism for nutritional support.'
     },
     {
       id: 2,
-      name: 'Special Rolls',
-      price: 120,
+      name: 'Russian Salad',
+      price: 12,
       image: 'image 2',
-      description: 'Delicious, portable wraps filled with a variety of ingredients like veggies, meats, and sauces, wrapped in bread.'
+      description: 'Food is any substance consumed by an organism for nutritional support.'
     },
     {
       id: 3,
-      name: 'Special Rolls',
-      price: 120,
+      name: 'Asian Salad',
+      price: 12,
       image: 'image 3',
-      description: 'Delicious, portable wraps filled with a variety of ingredients like veggies, meats, and sauces, wrapped in bread.'
+      description: 'Food is any substance consumed by an organism for nutritional support.'
     },
     {
       id: 4,
-      name: 'Special Rolls',
-      price: 120,
+      name: 'American Salad',
+      price: 12,
       image: 'image 4',
-      description: 'Delicious, portable wraps filled with a variety of ingredients like veggies, meats, and sauces, wrapped in bread.'
+      description: 'Food is any substance consumed by an organism for nutritional support.'
     }
   ];
 
@@ -67,8 +63,7 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen relative" style={getGradientStyle()}>
-      
+    <div className="min-h-screen" style={getGradientStyle()}>
       {/* Hero Section */}
       <section className="container mx-auto flex flex-col md:flex-row items-center justify-between py-24 px-6 md:px-16">
         <div className="md:w-1/2 text-left space-y-6">
@@ -96,65 +91,45 @@ const Home = () => {
         </div>
         <div className="md:w-1/2 flex justify-center mt-12 md:mt-0">
           <div className="w-64 h-64 md:w-80 md:h-80 bg-white/50 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg">
-          <img src={cook} alt="Cook" className="w-500 h-80" />
+            <img
+              src="../icons/hera.png"
+              alt="Cooking Illustration"
+              className="max-w-full h-auto object-contain p-6"
+            />
           </div>
         </div>
       </section>
 
-      {/* Intro Page - Moved down slightly */}
-      <div className="pt-24 pb-24">
-        <div className="max-w-4xl mx-auto px-6">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#963E1F] pl-17">Welcome to ChefMate</h1>
-          <div className="flex flex-col md:flex-row items-center gap-8">
-            <div className="flex-1">
-              <p className="text-xl leading-relaxed text-gray-800 mb-4 text-center">
-                Your ultimate kitchen companion! ChefMate simplifies cooking with smart recipe searches, AI-powered assistance, meal planning, and a foodie community.
-              </p>
-              <p className="text-xl leading-relaxed text-gray-800 text-center">
-                Discover trending recipes, scale ingredients, find nearby grocery stores, and set the perfect cooking vibe. <br/> Make every meal special! 🍽️✨
-              </p>
-            </div>
-            <div className="flex-shrink-0 relative top-[-100px] md:top-[-100px]">
-              <div className="w-36 h-36 md:w-48 md:h-48">
-                <img src={welcome} alt="Welcome" className="w-300 h-80" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       <Trending/>
 
       {/* Chill Corner Section */}
       <section className="py-24 px-6 md:px-16 flex flex-col md:flex-row items-center justify-between">
         <div className="md:w-1/2 space-y-6 text-left">
-          <div className="space-y-2">
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 text-center">Chill</h2>
-            <h2 className="text-3xl md:text-5xl font-bold text-emerald-600 text-center">Corner</h2>
-          </div>
-          
-          <p className="text-gray-700 text-xl text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            Chill Corner
+          </h2>
+          <p className="text-gray-700 text-xl">
             Because good food deserves good vibes!
           </p>
-          <div className="flex justify-center">
-            <button
-              onClick={() => navigate("/chillcorner")}
-              className="bg-green-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-green-700 transition text-lg mx-auto"
-            >
-              Explore
-            </button>
-          </div>
+          <button
+            onClick={() => navigate("/chillcorner")}
+            className="bg-green-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-green-700 transition text-lg"
+          >
+            Explore
+          </button>
         </div>
         <div className="md:w-1/2 flex justify-center mt-12 md:mt-0">
-          <img src={chill} alt="Chill" className="w-200 h-100" />
+          <img
+            src="../icons/chill-corner.png"
+            alt="Chill Corner Illustration"
+            className="w-full max-w-lg"
+          />
         </div>
       </section>
-
-      <RecipeDiarySection />
-
+      
+      <RecipeDiarySection/>
       <Testimonials />
-
     </div>
-
   );
 };
 

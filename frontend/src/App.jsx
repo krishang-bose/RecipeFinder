@@ -15,7 +15,7 @@ import ChillCorner from './Pages/ChillCorner';
 import Timer1 from './Pages/Timer1';
 import Map from './Pages/Map';
 import CommunityCorner from './Pages/CommunityCorner';
-import MyRecipeDiary from './Pages/MyRecipe';
+import MyRecipeDiary, { CreateRecipe, RecipeDetail } from './Pages/MyRecipe';
 import CookingCourses from'./Pages/CookingCourses';
 
 
@@ -57,7 +57,8 @@ const MainContent = ({ authUser }) => {
         <Route path="/Map"element={authUser ? <Map /> : <Navigate to="/signup" />}/>
         <Route path="/CommunityCorner"element={authUser ? <CommunityCorner /> : <Navigate to="/signup" />}/>
         <Route path="/Courses"element={authUser ? <CookingCourses/> : <Navigate to="/signup" />}/>
-        
+        <Route path="/MyRecipeDiary"element={authUser ? <RecipeDetail/> : <Navigate to="/signup" />}/>
+        <Route path="/CreateRecipe"element={authUser ? <CreateRecipe/> : <Navigate to="/signup" />}/>
       </Routes>
       <Footer/>
       <Toaster />
@@ -65,7 +66,6 @@ const MainContent = ({ authUser }) => {
   );
 };
 
-// ✅ Define PropTypes
 MainContent.propTypes = {
   authUser: PropTypes.any, 
 };
