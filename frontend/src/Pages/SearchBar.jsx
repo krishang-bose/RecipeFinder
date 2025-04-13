@@ -42,6 +42,7 @@ const RecipeSearch = () => {
   const handleSearch = async () => {
     try {
       const BASE_URL = import.meta.env.VITE_APP_API_URL;
+      console.log("BASE_URL", BASE_URL);
       const url = `${BASE_URL}/api/recipes/search?query=${query}`;
       const response = await fetch(url);
       

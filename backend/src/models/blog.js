@@ -7,10 +7,6 @@ const BlogSchema = new mongoose.Schema(
             required: true,
             trim: true
         },
-        time: {
-            type: Date,
-            default: Date.now
-        },
         email: {
             type: String,
             required: true,
@@ -22,8 +18,11 @@ const BlogSchema = new mongoose.Schema(
             type: String,
             required: true,
             trim: true
-        }   
-    }
+        }
+    },
+    {timestamps: true}
 );
 
-module.exports = mongoose.model('Blog', BlogSchema);
+const Blog = mongoose.model('Blog', BlogSchema);
+
+export default Blog;
