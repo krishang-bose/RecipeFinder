@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const BlogSchema = new mongoose.Schema(
     {
-        name: {
+        title: {
             type: String,
             required: true,
             trim: true
@@ -14,7 +14,7 @@ const BlogSchema = new mongoose.Schema(
             lowercase: true,
             match: [/.+\@.+\..+/, 'Please fill a valid email address']
         },
-        message: {
+        description: {
             type: String,
             required: true,
             trim: true

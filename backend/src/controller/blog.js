@@ -1,25 +1,25 @@
 import Blog from "../models/blog.js";
 
 export const addBlog = async (req, res) => {
-    const { name, message } = req.body;
+    const { title, description } = req.body;
     try {
         const email = req.user.email;
-        if (!name || !message) {
+        if (!title || !description) {
             return res.status(400).json({ message: "Please fill all the fields" });
         }
 
         const newBlog = new Blog({
-            name,
+            title,
             email,
-            message
+            description
         });
 
         await newBlog.save();
         res.status(201).json({
             _id: newBlog._id,
-            name: newBlog.name,
+            title: newBlog.title,
             email: newBlog.email,
-            message: newBlog.message
+            description: newBlog.description
         });
     } catch (error) {
         console.log("Error at addBlog controller", error);
