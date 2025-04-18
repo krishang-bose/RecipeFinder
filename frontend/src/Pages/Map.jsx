@@ -111,7 +111,7 @@ const Map = () => {
         }        
         
         // Reverse geocode to get user's location name
-        fetch(`https://api.geoapify.com/v1/geocode/reverse?lat=${latitude}&lon=${longitude}&apiKey=7a2079ba0bae4c77824f372e47312e5e`)
+        fetch(`https://api.geoapify.com/v1/geocode/reverse?lat=${latitude}&lon=${longitude}&apiKey=${apiKey}`)
           .then(response => response.json())
           .then(data => {
             if (data.features && data.features.length > 0) {
@@ -157,7 +157,7 @@ const Map = () => {
         filter: `circle:${lon},${lat},${radius}`,
         bias: `proximity:${lon},${lat}`,
         limit: '20',
-        apiKey: '7a2079ba0bae4c77824f372e47312e5e',
+        apiKey: import.meta.env.VITE_GEOAPIFY_API_KEY,
       });
   
       if (query) {
